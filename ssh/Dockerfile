@@ -1,12 +1,12 @@
 # sshd
-#
-# VERSION               0.0.1
 
-FROM centos
+FROM base
 
-RUN yum -y update
+RUN apt-get update
 
-RUN yum -y install openssh-server
+RUN apt-get install -y openssh-server
+RUN mkdir /var/run/sshd
+RUN echo 'root:password' |chpasswd
 
 EXPOSE 22
-CMD /usr/sbin/sshd
+CMD    /usr/sbin/sshd -D
