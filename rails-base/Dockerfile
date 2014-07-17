@@ -23,7 +23,6 @@ RUN apt-get update && \
   cd .. && \
   rm -r ruby-2.1.2 ruby-2.1.2.tar.gz && \
   echo 'gem: --no-document' > /usr/local/etc/gemrc && \
-  echo 'gem: --no-rdoc --no-ri' >> /.gemrc && \
   gem install bundler
 
 # Install Node.js and npm
